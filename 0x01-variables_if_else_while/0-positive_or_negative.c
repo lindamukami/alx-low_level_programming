@@ -1,8 +1,11 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes here */
-/* betty style doc for function main goes here */
+/**
+ * main - Entry point
+ *
+ * Return: Always 0 (Succss)
+ */
 int main(void)
 {
 	int n;
