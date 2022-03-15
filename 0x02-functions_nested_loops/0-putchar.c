@@ -5,6 +5,14 @@
  */
 int main(void)
 {
-	_putchar("_putchar\n");
+	char c[8] = "_putchar";
+	int a = 0;
+
+	while (a < 7)
+
+	{
+		_putchar(c[a]);
+		a++
+	}
+	_putchar('\n');
 	return (0);
-}
