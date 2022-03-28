@@ -9,7 +9,7 @@
  */
 char *_strpbrk(char *s, char *accept)
 {
-	for i, j;
+	int i, j;
 
 	for (i = 0; *s != '\0'; i++)
 	{
@@ -22,5 +22,6 @@ char *_strpbrk(char *s, char *accept)
 		}
 		s++;
 	}
+
 	return (NULL);
 }
