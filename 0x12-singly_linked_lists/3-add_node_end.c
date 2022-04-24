@@ -11,30 +11,27 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	int len;
-	list_t *last;
-	list_t *new_node;
+	/* allocate node*/
+	list_t *new_node = malloc(sizeof(list_t));
+	list_t *last = *head;
 
-	last = *head;
-	new_node = malloc(sizeof(list_t));
-	if (new_node == NULL)
+	if(new_node == NULL)
 		return (NULL);
-	for (len = 0; str[len]; len++)
-		;
-	new_node->str = strdup(str);
+	for (len = 0; str[len]; len++);
+	
 	new_node->len = len;
+	new_node->str = strdup(str);
 	new_node->next = NULL;
-	if ((*head) == NULL)
+	/*if linked list is empty, then make the new node as head*/
+	if(*head == NULL)
 	{
-		(*head) = new_node;
+		*head = new_node;
+		return;
 	}
-	else
-	{
-		last = *head;
-		while (last->next != NULL)
-		{
-			last = last->next;
-		}
-		last->next = new_node;
-	}
-	return (new_node);
+	/* else traverse till the last node*/
+	while(last->next != NULL)
+		last = last->next;
+	/*change the next of last node*/
+	last->next = new_node;
+	return;
 }
